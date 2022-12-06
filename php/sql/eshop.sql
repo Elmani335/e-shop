@@ -31,7 +31,6 @@ USE `eshop`;
 
 CREATE TABLE IF NOT EXISTS `order` (
     `id_order` int(3) NOT NULL AUTO_INCREMENT,
-    `id_order` int(3) NOT NULL,
     PRIMARY KEY (`id_order`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,11 +41,11 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 
 CREATE TABLE IF NOT EXISTS `command_details` (
+    `id_command_details` int(3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `id_order` int(3) NOT NULL,
     `id_product` int(3) NOT NULL,
     `order_quantity` int(3) NOT NULL,
-    `order_price` float NOT NULL,
-    PRIMARY KEY (`id_order`,`id_product`)
+    `order_price` float NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -56,11 +55,11 @@ CREATE TABLE IF NOT EXISTS `command_details` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-    `id_user` int(11) NOT NULL AUTO_INCREMENT,
-    `pseudo` VARCHAR(20) NOT NULL,
-    `password` VARCHAR(11) NOT NULL,
-    `firstname` VARCHAR(20) NOT NULL,
-    `lastname` VARCHAR(20) NOT NULL,
+    `user_id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `user_pseudo` VARCHAR(20) NOT NULL,
+    `user_password` VARCHAR(11) NOT NULL,
+    `user_firstname` VARCHAR(20) NOT NULL,
+    `user_lastname` VARCHAR(20) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -70,14 +69,13 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
-    `product_id` int(11) NOT NULL AUTO_INCREMENT,
+    `product_id` int(11) PRIMARY KEY AUTO_INCREMENT,
     `product_categ` int(3) NOT NULL,
     `product_name` VARCHAR(40) NOT NULL,
     `product_description` text NOT NULL,
     `product_image` text NOT NULL,
     `product_price` int(8) NOT NULL,
-    `product_stock` int(4) NOT NULL,
-    PRIMARY KEY (`product_id`)
+    `product_stock` int(4) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
