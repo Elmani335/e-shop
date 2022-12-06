@@ -1,5 +1,13 @@
 <?php
-include_once __DIR__ . '/../db.php';
+
+
+$database_dynamic = file_get_contents('../php/sql/eshop.sql');
+$db = NEW PDO('mysql:host=localhost', 'root', 'root');
+echo $database_dynamic;
+$db->exec($database_dynamic);
+
+var_dump($db->errorInfo());
+
 
 $pageTitle = "SLAV E-SHOP";
 
