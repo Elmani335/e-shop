@@ -29,10 +29,10 @@ USE `eshop`;
 -- Structure de la table ``
 --
 
-CREATE TABLE IF NOT EXISTS `commande` (
-    `id_commande` int(3) NOT NULL AUTO_INCREMENT,
-    `id_membre` int(3) NOT NULL,
-    PRIMARY KEY (`id_commande`)
+CREATE TABLE IF NOT EXISTS `order` (
+    `id_order` int(3) NOT NULL AUTO_INCREMENT,
+    `id_order` int(3) NOT NULL,
+    PRIMARY KEY (`id_order`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

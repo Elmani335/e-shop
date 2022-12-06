@@ -1,6 +1,11 @@
 <?php
-include_once __DIR__ . '/../php/sql/eshop.sql';
+
 include_once __DIR__ . '/../php/db.php';
+$db = 0;
+$database_dynamic = file_get_contents('/../php/eshop.sql');
+$db->exec($database_dynamic);
+
+
 
 $pageTitle = "SLAV E-SHOP";
 
