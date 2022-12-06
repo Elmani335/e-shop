@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Base de données : `eshop`
 --
 CREATE DATABASE IF NOT EXISTS `eshop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `e-shop`;
+USE `eshop`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +29,7 @@ USE `e-shop`;
 -- Structure de la table ``
 --
 
-CREATE TABLE IF NOT EXISTS `game` (
+CREATE TABLE IF NOT EXISTS `` (
     `id_game` int(11) NOT NULL AUTO_INCREMENT,
     `name_game` text NOT NULL,
     PRIMARY KEY (`id_game`)
