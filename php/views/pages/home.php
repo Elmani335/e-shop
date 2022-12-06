@@ -4,7 +4,7 @@ $pageTitle = "SLAV E-SHOP";
 // Commencer a ecrire dans la memoire tampon
 ob_start();
 ?>
-$
+
 
 <?php
 // TEST XSS - WHY htmlspecialchars()
