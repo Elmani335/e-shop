@@ -29,9 +29,9 @@ USE `eshop`;
 -- Structure de la table ``
 --
 
-CREATE TABLE IF NOT EXISTS `` (
-    `id_game` int(11) NOT NULL AUTO_INCREMENT,
-    `name_game` text NOT NULL,
+CREATE TABLE IF NOT EXISTS `commande` (
+    `id_commande` int(3) NOT NULL AUTO_INCREMENT,
+    `id_membre` int(3) NOT NULL,
     PRIMARY KEY (`id_game`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
