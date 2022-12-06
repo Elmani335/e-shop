@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `eshop`
 --
+
 CREATE DATABASE IF NOT EXISTS `eshop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `eshop`;
 
@@ -55,11 +56,11 @@ CREATE TABLE IF NOT EXISTS `command_details` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-    `user_id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `user_pseudo` VARCHAR(20) NOT NULL,
-    `user_password` VARCHAR(255) NOT NULL,
-    `user_firstname` VARCHAR(20) NOT NULL,
-    `user_lastname` VARCHAR(20) NOT NULL
+    `id_user` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `pseudo_user` VARCHAR(20) NOT NULL,
+    `password_user` VARCHAR(255) NOT NULL,
+    `firstname` VARCHAR(20) NOT NULL,
+    `lastname` VARCHAR(20) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -69,13 +70,13 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
-    `product_id` int(11) PRIMARY KEY AUTO_INCREMENT,
-    `product_categ` int(3) NOT NULL,
-    `product_name` VARCHAR(40) NOT NULL,
-    `product_description` text NOT NULL,
-    `product_image` text NOT NULL,
-    `product_price` int(8) NOT NULL,
-    `product_stock` int(4) NOT NULL
+    `id_product` int(11) PRIMARY KEY AUTO_INCREMENT,
+    `categ_product` int(3) NOT NULL,
+    `name_product` VARCHAR(40) NOT NULL,
+    `description_product` text NOT NULL,
+    `image_product` text NOT NULL,
+    `price_product` int(8) NOT NULL,
+    `stock_product` int(4) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
