@@ -5,7 +5,6 @@ $pageTitle = "SLAV E-SHOP";
 ob_start();
 ?>
 
-<h1>E SHOP - SLAV LIMITED LTD</h1>
 
 <?php
 // TEST XSS - WHY htmlspecialchars()
