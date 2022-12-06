@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `command_details` (
 CREATE TABLE IF NOT EXISTS `user` (
     `user_id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `user_pseudo` VARCHAR(20) NOT NULL,
-    `user_password` VARCHAR(11) NOT NULL,
+    `user_password` VARCHAR(255) NOT NULL,
     `user_firstname` VARCHAR(20) NOT NULL,
     `user_lastname` VARCHAR(20) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
