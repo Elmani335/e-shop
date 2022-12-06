@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
-    `id_product` int(11) NOT NULL AUTO_INCREMENT,
+    `product_id` int(11) NOT NULL AUTO_INCREMENT,
     `product_categ` int(3) NOT NULL,
     `product_name` VARCHAR(40) NOT NULL,
     `product_description` text NOT NULL,
