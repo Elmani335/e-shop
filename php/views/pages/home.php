@@ -1,10 +1,11 @@
 <?php
-$pageTitle = "Home - Mon site.com";
+$pageTitle = "SLAV E-SHOP";
 
 // Commencer a ecrire dans la memoire tampon
 ob_start();
 ?>
-<h1>HOME PAGE</h1>
+
+<h1>E SHOP - SLAV LIMITED LTD</h1>
 
 <?php
 // TEST XSS - WHY htmlspecialchars()
