@@ -3,8 +3,9 @@
  'hostname' => 'localhost',
  'user' => 'root',
  'password' => 'root',
- 'nameBDD' => 'puissance_4'
-];
+ 'nameBDD' => 'eshop',
+     ];
+
 $hostname = $conf['hostname'];
 $username = $conf['user'];
 $password = $conf['password'];
