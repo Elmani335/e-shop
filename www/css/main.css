@@ -1,0 +1,12 @@
+
+body {
+    background-color: #000000;
+}
+
+h1 {
+    border: 2px solid #ff0000;
+    padding-inline: 10px;
+    border-radius: 25px;
+    font-family: Bahnschrift;
+    color: white;
+}
