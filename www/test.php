@@ -1,5 +1,6 @@
 <?php
-include_once __DIR__ . '/../db.php';
+include_once __DIR__ . '/../php/sql/eshop.sql';
+include_once __DIR__ . '/../php/db.php';
 
 $pageTitle = "SLAV E-SHOP";
 

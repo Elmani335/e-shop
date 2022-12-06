@@ -32,7 +32,7 @@ USE `eshop`;
 CREATE TABLE IF NOT EXISTS `commande` (
     `id_commande` int(3) NOT NULL AUTO_INCREMENT,
     `id_membre` int(3) NOT NULL,
-    PRIMARY KEY (`id_game`)
+    PRIMARY KEY (`id_commande`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -42,11 +42,11 @@ CREATE TABLE IF NOT EXISTS `commande` (
 --
 
 CREATE TABLE IF NOT EXISTS `command_details` (
-    `id_commande` int(3) NOT NULL,
-    `id_produit` int(3) NOT NULL,
-    `quantite` int(3) NOT NULL,
-    `prix` float NOT NULL,
-    PRIMARY KEY (`id_commande`,`id_produit`)
+    `id_order` int(3) NOT NULL,
+    `id_product` int(3) NOT NULL,
+    `order_quantity` int(3) NOT NULL,
+    `order_price` float NOT NULL,
+    PRIMARY KEY (`id_order`,`id_product`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
