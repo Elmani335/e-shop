@@ -3,9 +3,11 @@
 
 .navbar2 {
     background-color: #ff0000;
+    border-radius: 25px;
     color: #ffffff;
     padding: 10px;
     text-align: center;
-
+    font-family: Bahnschrift;
+    text-decoration: none;
 
 }
