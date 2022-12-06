@@ -38,69 +38,46 @@ CREATE TABLE IF NOT EXISTS `commande` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `membre`
+-- Structure de la table `command_details`
+--
+
+CREATE TABLE IF NOT EXISTS `command_details` (
+    `id_commande` int(3) NOT NULL,
+    `id_produit` int(3) NOT NULL,
+    `quantite` int(3) NOT NULL,
+    `prix` float NOT NULL,
+    PRIMARY KEY (`id_commande`,`id_produit`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
     `id_user` int(11) NOT NULL AUTO_INCREMENT,
     `pseudo` VARCHAR(20) NOT NULL,
-    `` int(11) NOT NULL,
-    `text_message` text NOT NULL,
-    `send_date_message` timestamp NOT NULL DEFAULT current_timestamp(),
-    PRIMARY KEY (`id_message`),
-    KEY `message_game_null_fk` (`id_game_message`),
-    KEY `message_user_null_fk` (`id_sender_message`)
+    `password` VARCHAR(11) NOT NULL,
+    `firstname` VARCHAR(20) NOT NULL,
+    `lastname` VARCHAR(20) NOT NULL,
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `score`
+-- Structure de la table `product`
 --
 
-CREATE TABLE IF NOT EXISTS `` (
-    `id_score` int(11) NOT NULL AUTO_INCREMENT,
-    `id_user_score` int(11) NOT NULL,
-    `id_game_score` int(11) NOT NULL,
-    `difficulty_game_score` int(11) NOT NULL,
-    `game_score_score` int(11) NOT NULL,
-    `game_started_date_score` timestamp NOT NULL DEFAULT current_timestamp(),
-    `game_ended_date_score` timestamp NULL DEFAULT NULL,
-    PRIMARY KEY (`id_score`),
-    UNIQUE KEY `id_user_score` (`id_user_score`,`id_game_score`,`difficulty_game_score`),
-    KEY `score_game_null_fk` (`id_game_score`)
+CREATE TABLE IF NOT EXISTS `product` (
+    `id_product` int(11) NOT NULL AUTO_INCREMENT,
+    `product_categ` int(3) NOT NULL,
+    `product_name` VARCHAR(40) NOT NULL,
+    `product_description` text NOT NULL,
+    `product_image` text NOT NULL,
+    `product_price` int(8) NOT NULL,
+    `product_stock` int(4) NOT NULL,
+    PRIMARY KEY (`product_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
-
---
--- Structure de la table ``
---
-
-CREATE TABLE IF NOT EXISTS `` (
-    `id_user` int(11) NOT NULL AUTO_INCREMENT,
-    `email_user` text NOT NULL,
-    `password_user` text NOT NULL,
-    `username_user` text DEFAULT NULL,
-    `created_date_user` timestamp NOT NULL DEFAULT current_timestamp(),
-    PRIMARY KEY (`id_user`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `message`
---
-ALTER TABLE `message`
-    ADD CONSTRAINT `message_game_null_fk` FOREIGN KEY (`id_game_message`) REFERENCES `game` (`id_game`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `message_user_null_fk` FOREIGN KEY (`id_sender_message`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `score`
---
-ALTER TABLE `score`
-    ADD CONSTRAINT `score_game_null_fk` FOREIGN KEY (`id_game_score`) REFERENCES `game` (`id_game`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `score_user_null_fk` FOREIGN KEY (`id_user_score`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
