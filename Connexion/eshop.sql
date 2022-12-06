@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Base de données : `eshop`
 --
 CREATE DATABASE IF NOT EXISTS `eshop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `puissance_4`;
+USE `e-shop`;
 
 -- --------------------------------------------------------
 
@@ -83,8 +83,6 @@ CREATE TABLE IF NOT EXISTS `` (
     `password_user` text NOT NULL,
     `username_user` text DEFAULT NULL,
     `created_date_user` timestamp NOT NULL DEFAULT current_timestamp(),
-    `last_login_date_user` timestamp NULL DEFAULT NULL,
-    `last_seen_date_user` timestamp NULL DEFAULT NULL,
     PRIMARY KEY (`id_user`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
