@@ -37,14 +37,14 @@ CREATE TABLE IF NOT EXISTS `commande` (
 
 -- --------------------------------------------------------
 
-
--- Structure de la table ``
+--
+-- Structure de la table `membre`
 --
 
-CREATE TABLE IF NOT EXISTS `message` (
-    `id_message` int(11) NOT NULL AUTO_INCREMENT,
-    `id_game_message` int(11) NOT NULL,
-    `id_sender_message` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+    `id_user` int(11) NOT NULL AUTO_INCREMENT,
+    `pseudo` VARCHAR(20) NOT NULL,
+    `` int(11) NOT NULL,
     `text_message` text NOT NULL,
     `send_date_message` timestamp NOT NULL DEFAULT current_timestamp(),
     PRIMARY KEY (`id_message`),
