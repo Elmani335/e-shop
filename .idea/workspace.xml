@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="572d8907-d88d-4e11-a5b2-528e047b953d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/views/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/pages/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/views/partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/views/partials/header.php" afterDir="false" />
-    </list>
+    <list default="true" id="572d8907-d88d-4e11-a5b2-528e047b953d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +25,7 @@
   </component>
   <component name="ProjectId" id="2IX7Yab0qHchLS5FWsZmXTRcMGE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
