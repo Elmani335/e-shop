@@ -18,9 +18,9 @@
                 <a href="index.php?page=contact">Contact</a>
                 <a href="index.php?page=about">About</a>
                 <a href="index.php?page=login">Login</a>
-                <a href="index.php?page=register">Register</a>
+                <a href="index.php?page=inscription">Register</a>
             </div>
         </div>
     </div>
 </div>
-<body>
+</html>

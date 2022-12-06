@@ -1,4 +1,4 @@
-Footer<br>
+
 
 <div class="footer">
     <link rel="stylesheet" href="css/footer.css">
@@ -9,5 +9,6 @@ Footer<br>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
