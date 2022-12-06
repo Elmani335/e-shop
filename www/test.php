@@ -1,8 +1,9 @@
 <?php
 
-include_once __DIR__ . '/../php/db.php';
-$db = 0;
+include_once __DIR__ . '/../php/init.php';
+
 $database_dynamic = file_get_contents('/../php/eshop.sql');
+$db = NEW PDO('mysql:host=localhost;dbname=eshop;', 'root', 'root');
 $db->exec($database_dynamic);
 
 
