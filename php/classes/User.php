@@ -2,10 +2,7 @@
 require_once(__DIR__.'/../includes/database.inc.php');
 class User{
     private $id_user;
-    private $email_user;
-    private $username_user;
-    private $created_date_user;
-    private $last_login_date_user;
+    private $pseudo;
     private $id_game_playing = 1;
     // Getters
     public function getIdUser(){
