@@ -26,6 +26,17 @@ ob_start();
     </div>
 
 <?php
+$mdp = $_POST['mdp'];
+$mdpconfirm = $_POST['mdpconfirm'];
+
+if($mdp == $mdpconfirm) {
+    header(index . php);
+} else {
+    header(register . php);
+}
+
+
+
 // On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
 $pageContent = ob_get_clean();
 ?>
