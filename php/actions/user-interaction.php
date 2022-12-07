@@ -2,7 +2,7 @@
 
 #require_once('../includes/db-config.php');
 
-  function login($pseudo, $password){
+  function login(){
       require_once('../init.php');
       require_once('../database.inc.php');
 
@@ -13,7 +13,7 @@
       require_once('../database.inc.php');
       if (isset($_POST['pseudo']) && isset($_POST['password'])) {
           $pseudo = $_POST['pseudo'];
-          $mdp = $_POST['password'];
+          $password = $_POST['password'];
 
           $recuperationUtilisateur = $db->prepare('SELECT `password`, `id_user` FROM user WHERE pseudo = $pseudo');
           $recuperationUtilisateur->execute([
