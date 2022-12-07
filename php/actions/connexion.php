@@ -2,12 +2,12 @@
 spl_autoload_register(function($class){ 
     require_once('../classes/'.$class.'.php');
 });
-require_once('../database.inc.php');
-if (isset($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL ) && isset($_POST['motDePasse'])){
-    $email = trim(htmlspecialchars($_POST['email']));
-    $mdp = $_POST['motDePasse'];
+#require_once('../database.inc.php');
+#if (isset($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL ) && isset($_POST['motDePasse'])){
+#    $email = trim(htmlspecialchars($_POST['email']));
+#    $mdp = $_POST['motDePasse'];
 
-    $recuperationUtilisateur = $db->prepare('SELECT password_user, id_user FROM user WHERE email_user = :email ');
+    $recuperationUtilisateur = $db->prepare('SELECT password, id_user FROM user WHERE email = :email ');
     $recuperationUtilisateur->execute([
         'email' => $email
     ]);
