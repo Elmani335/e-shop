@@ -1,10 +1,10 @@
 <?php
-include_once __DIR__ . '/../www/css/login.css';
 $pageTitle = "Login - SLAV LIMITED.LTD";
 // create a login page to allow users to login to the site
 $page = "login";
 
 $error_message = get_error();
+
 
 ob_start();
 ?>
@@ -19,9 +19,9 @@ ob_start();
 
 </html>
 
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="../../css/login.css">
     <h1>Login</h1>
-    <form class="form1" action="/php/actions/user-interaction.php" method="post">
+    <form class="form1" action="../../actions/user-interaction.php" method="post">
         <label for="email" class="email">Email</label>
         <div class="centerer">
         <input type="email" name="email" id="email" required>
