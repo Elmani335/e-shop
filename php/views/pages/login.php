@@ -22,15 +22,8 @@ ob_start();
                 </div>
         </form>
         <div class="subbtn">
-            <input id="btn" type="submit" value= "<?php
-            require_once __DIR__ . '/../../actions/user-interaction.php';
-            $pseudo = $_POST['pseudo'];
-            $motDePasse = $_POST['motDePasse'];
-            login($pseudo, $motDePasse);
-            ?>">
+            <input id="btn" type="submit" value= "SUBMIT">
         </div>
-
-
 <?php $pageContent = ob_get_clean(); ?>
 
 
