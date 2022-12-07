@@ -13,3 +13,5 @@ $router_pages = ['home', 'contact', 'about', 'products', 'login', 'inscription',
 require_once __DIR__ . '/utils/errors.php';
 
 // inclure toutes les classes
+
+require_once __DIR__ . '/classes/Database.php';
