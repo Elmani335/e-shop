@@ -2,7 +2,7 @@
 spl_autoload_register(function($class){ 
     require_once('../classes/'.$class.'.php');
 });
-require_once('../includes/database.inc.php');
+require_once('../database.inc.php');
 if (isset($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL ) && isset($_POST['motDePasse'])){
     $email = trim(htmlspecialchars($_POST['email']));
     $mdp = $_POST['motDePasse'];
