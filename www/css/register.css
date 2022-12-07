@@ -64,6 +64,7 @@
 
 }
 
+
 .civilite {
 
     display: flex;
@@ -109,6 +110,13 @@
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+}
+
+.centerer input {
+    font-family: Bahnschrift;
+    font-size: 20px;
+    color: #000000;
+
 }
 
 .subbtn {
