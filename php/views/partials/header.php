@@ -16,7 +16,6 @@
                 <a href="index.php">Home</a>
                 <a href="index.php?page=products">Products</a>
                 <a href="index.php?page=contact">Contact</a>
-                <a href="index.php?page=about">About</a>
                 <a href="index.php?page=login">Login</a>
                 <a href="index.php?page=inscription">Register</a>
             </div>
