@@ -5,12 +5,11 @@ $page = "login";
 
 $error_message = get_error();
 
-
 ob_start();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <form method="post">
     <input type="submit" name="button1"
@@ -36,12 +35,6 @@ ob_start();
     </form>
 
 
-<?php
-
-
-
-$pageContent = ob_get_clean();
-
-?>
+<?php $pageContent = ob_get_clean(); ?>
 
 
