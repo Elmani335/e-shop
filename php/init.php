@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 session_start();
 
-require_once __DIR__ . 'database.inc.php';
+require_once __DIR__ . '/database.inc.php';
 
 // CONFIG
 $router_pages = ['home', 'contact', 'about', 'products', 'login', 'inscription', '404'];
