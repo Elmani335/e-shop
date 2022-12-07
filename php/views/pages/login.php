@@ -8,17 +8,13 @@ $error_message = get_error();
 ob_start();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <form method="post">
     <input type="submit" name="button1"
            class="button" value="login" />
 </form>
 
-</html>
 
-<link rel="stylesheet" href="../../css/login.css">
+<link rel="stylesheet" href="css/login.css">
     <h1>Login</h1>
     <form class="form1" action="../../actions/user-interaction.php" method="post">
         <label for="email" class="email">Email</label>
