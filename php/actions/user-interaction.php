@@ -71,10 +71,11 @@ function register($pseudo, $motDePasse){
     return true;
 }
 
-
-
-
-
+function get_products() {
+    global $db;
+    $query = $db->prepare('SELECT * FROM products');
+    return $query->fetchAll();
+}
 
 
 ?>

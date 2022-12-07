@@ -17,3 +17,6 @@ require_once __DIR__ . '/utils/errors.php';
 
 // inclure toutes les classes
 
+// definir la fonction get_products
+
+

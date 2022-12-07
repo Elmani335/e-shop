@@ -1,10 +1,8 @@
 <?php
 
 $pageTitle = "Products - SLAV LIMITED.LTD";
-
-require_once __DIR__ . '../../init.php';
-
 $error_message = get_error();
+$page = "products";
 
 ob_start();
 
@@ -62,9 +60,5 @@ ob_start();
 
 </div>
 
-<?php
+<?php $pageContent = ob_get_clean(); ?>
 
-// On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
-$pageContent = ob_get_clean();
-
-?>
