@@ -39,22 +39,18 @@
       }
       header('Location: ../Login.php?msg=L\'email ou le mot de passe est invalide');
       die();
-
   }
 
-    function logout(){
-        session_start();
-        if (isset($_SESSION['user'])) {
-            session_destroy();
-        }
-        header('Location: ../index.php');
-    }
+  function logout(){
+      session_start();
+      if (isset($_SESSION['user'])) {
+          session_destroy();
+      }
+      header('Location: ../index.php');
+  }
 
 
-
-
-
-// function register with information given in the inscription.php form
+// function register with information given in the register.php form
 
 function register($pseudo, $motDePasse){
     // get the database connection
