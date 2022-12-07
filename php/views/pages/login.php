@@ -20,6 +20,7 @@ ob_start();
                 <div class="centerer">
                     <input type="password" name="motDePasse" id="motDePasse" required>
                 </div>
+        </form>
             <div class="subbtn">
                 <input id="btn" type="submit" value= "<?php
                 $pseudo = $_POST['pseudo'];
@@ -27,7 +28,6 @@ ob_start();
                 login($pseudo, $motDePasse);
                 ?>">
             </div>
-        </form>
 
 
 <?php $pageContent = ob_get_clean(); ?>
