@@ -1,9 +1,9 @@
 <?php 
  $conf = [
- 'hostname' => 'localhost',
- 'user' => 'root',
- 'password' => 'root',
- 'nameBDD' => 'eshop',
+ 'hostname' => '82.64.34.8',
+ 'user' => 'eshop',
+ 'password' => 'Eshop.git',
+ #'nameBDD' => 'eshop',
      ];
 
 $hostname = $conf['hostname'];
