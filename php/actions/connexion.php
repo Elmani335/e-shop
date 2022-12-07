@@ -1,5 +1,5 @@
 <?php session_start();
-spl_autoload_register(function($class){
+spl_autoload_register(function($class){ 
     require_once('../classes/'.$class.'.php');
 });
 require_once('../includes/database.inc.php');
@@ -22,8 +22,8 @@ if (isset($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL )
         ]);
         $utilisateurRecupere = $recuperationUtilisateur -> fetch();
         $_SESSION['user'] = $utilisateurRecupere;
-        var_dump($_SESSION['user']);
-        $_SESSION['user']->updateLastLogin($db);
+        var_dump($_SESSION['user']); 
+        $_SESSION['user']->updateLastLogin($db); 
         header('Location: ../index.php');
         die();
     }
