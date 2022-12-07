@@ -31,16 +31,17 @@
 }
 
 
-.centerer,input {
+.centerer input {
     font-family: Bahnschrift;
     font-size: 20px;
-    color: #ffffff;
+    color: #000000;
 
 }
 .centerer {
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+    color: black;
 }
 
 
@@ -48,13 +49,24 @@
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+
 }
 
 .subbtn #btn {
     font-family: Bahnschrift;
+    border: 2px solid #ffffff;
     font-size: 20px;
-    border-radius: 25px;
+    border-radius: 25px;r
+    background-color: white;
     color: black;
+    transition-delay: 50ms;
+    transition-duration: 500ms;
+}
+
+.subbtn #btn:hover {
+    border: 2px solid #50ff0d;
+    background-color: #000000;
+    color: #ffffff;
     transition-delay: 50ms;
     transition-duration: 500ms;
 }
