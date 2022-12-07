@@ -1,42 +1,57 @@
 <?php
 
-  function login($email, $motDePasse){
-    // get the database connection
-    global $connection;
-    // query to get the user information
-    $query = "SELECT * FROM users WHERE email_user = :email";
-    // prepare the query
-    $statement = $connection->prepare($query);
-    // bind the parameters
-    $statement->bindParam(':email', $email);
-    // execute the query
-    $statement->execute();
-    // check if the user exists
-    if($statement->rowCount() > 0){
-        // get the user information
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
-        // check the password
-        if(password_verify($motDePasse, $user['motDePasse_user'])){
-            // set the session
-            $_SESSION['id_user'] = $user['id_user'];
-            $_SESSION['pseudo'] = $user['pseudo'];
-            // prepare the query
-            $statement = $connection->prepare($query);
-            // bind the parameters
-            $statement->bindParam(':id_user', $user['id_user']);
-            // execute the query
-            $statement->execute();
-            // return true
-            return true;
-        }else{
-            // return false
-            return false;
+include_once '../includes/db-config.php';
+
+  function login($pseudo, $password){
+      require_once('../init.php');
+      require_once('../database.inc.php');
+
+      #spl_autoload_register(function($class){
+      #    require_once('../classes/'.$class.'.php');
+      #});
+
+      require_once('../database.inc.php');
+      if (isset($_POST['pseudo']) && isset($_POST['password'])) {
+          $pseudo = $_POST['pseudo'];
+          $mdp = $_POST['password'];
+
+          $recuperationUtilisateur = $db->prepare('SELECT `password`, `id_user` FROM user');
+          $recuperationUtilisateur->execute([
+              'password' => $mdp
+          ]);
+          $utilisateurRecupere = $recuperationUtilisateur->fetch();
+          $mdp_valid = ($mdp == $utilisateurRecupere['password']) ? true : false;
+
+          if ($mdp_valid) {
+              $recuperationUtilisateur = $db->prepare('SELECT id_user, pseudo  FROM user WHERE id_user = :id_user ');
+              $recuperationUtilisateur->setFetchMode(PDO::FETCH_CLASS, 'User');
+              $recuperationUtilisateur->execute([
+                  'id_user' => $utilisateurRecupere['id_user'],
+              ]);
+              $utilisateurRecupere = $recuperationUtilisateur->fetch();
+              $_SESSION['user'] = $utilisateurRecupere;
+              var_dump($_SESSION['user']);
+              $_SESSION['user']->updateLastLogin($db);
+              header('Location: ../index.php');
+              die();
+          }
+      }
+      header('Location: ../Login.php?msg=L\'email ou le mot de passe est invalide');
+      die();
+
+  }
+
+    function logout(){
+        session_start();
+        if (isset($_SESSION['user'])) {
+            session_destroy();
         }
-    }else{
-        // return false
-        return false;
+        header('Location: ../index.php');
     }
-}
+
+
+
+
 
 // function register with information given in the inscription.php form
 
