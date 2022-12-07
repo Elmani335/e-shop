@@ -1,14 +1,14 @@
 <?php
 
-include_once '../includes/db-config.php';
+#require_once('../includes/db-config.php');
 
   function login($pseudo, $password){
       require_once('../init.php');
       require_once('../database.inc.php');
 
-      #spl_autoload_register(function($class){
-      #    require_once('../classes/'.$class.'.php');
-      #});
+      spl_autoload_register(function($class){
+          require_once('../classes/'.$class.'.php');
+      });
 
       require_once('../database.inc.php');
       if (isset($_POST['pseudo']) && isset($_POST['password'])) {

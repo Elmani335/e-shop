@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . '/../www/css/login.css';
 $pageTitle = "Login - SLAV LIMITED.LTD";
 // create a login page to allow users to login to the site
 $page = "login";
@@ -8,9 +9,19 @@ $error_message = get_error();
 ob_start();
 ?>
 
+<!DOCTYPE html>
+<html>
+
+<form method="post">
+    <input type="submit" name="button1"
+           class="button" value="login" />
+</form>
+
+</html>
+
 <link rel="stylesheet" href="css/login.css">
     <h1>Login</h1>
-    <form class="form1" action="actions/connexion.php" method="post">
+    <form class="form1" action="/php/actions/user-interaction.php" method="post">
         <label for="email" class="email">Email</label>
         <div class="centerer">
         <input type="email" name="email" id="email" required>
@@ -20,12 +31,14 @@ ob_start();
         <input type="password" name="motDePasse" id="motDePasse" required>
         </div>
         <div class="subbtn">
-        <input id="btn" type="submit" value="Se connecter">
+        <input id="btn" type="submit" value="login">
         </div>
     </form>
 
 
 <?php
+
+
 
 $pageContent = ob_get_clean();
 
