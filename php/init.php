@@ -10,7 +10,7 @@ require_once __DIR__ . '/database.inc.php';
 $router_pages = ['home', 'contact', 'about', 'products', 'login', 'inscription', '404'];
 
 // inclure les actions
-require_once __DIR__ . '/actions/modif-user-db.php';
+require_once __DIR__ . '/actions/user-interaction.php';
 
 // inclure les utilitaires
 require_once __DIR__ . '/utils/errors.php';
