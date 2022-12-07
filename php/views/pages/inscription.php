@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "register - Mon site.com";
+$pageTitle = "Register - SLAV LIMITED.LTD";
 
 $error_message = get_error();
 
