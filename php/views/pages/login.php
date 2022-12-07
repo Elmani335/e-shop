@@ -8,9 +8,19 @@ $error_message = get_error();
 ob_start();
 ?>
 
-<link rel="stylesheet" href="css/login.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<form method="post">
+    <input type="submit" name="button1"
+           class="button" value="login" />
+</form>
+
+</html>
+
+<link rel="stylesheet" href="../../css/login.css">
     <h1>Login</h1>
-    <form class="form1" action="actions/connexion.php" method="post">
+    <form class="form1" action="../../actions/user-interaction.php" method="post">
         <label for="email" class="email">Email</label>
         <div class="centerer">
         <input type="email" name="email" id="email" required>
@@ -20,15 +30,11 @@ ob_start();
         <input type="password" name="motDePasse" id="motDePasse" required>
         </div>
         <div class="subbtn">
-        <input id="btn" type="submit" value="Se connecter">
+        <input id="btn" type="submit" value="login">
         </div>
     </form>
 
 
-<?php
-
-$pageContent = ob_get_clean();
-
-?>
+<?php $pageContent = ob_get_clean(); ?>
 
 
