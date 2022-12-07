@@ -22,7 +22,7 @@ ob_start();
                 </div>
         </form>
         <div class="subbtn">
-            <input id="btn" type="submit" value= "SUBMIT" onclick="window.">
+            <input id="btn" type="submit" value= "SUBMIT" onclick= <?php  header(index.php);?>>
         </div>
 <?php $pageContent = ob_get_clean(); ?>
 
