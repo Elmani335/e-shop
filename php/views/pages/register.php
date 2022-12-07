@@ -8,7 +8,7 @@ ob_start();
 ?>
 <link rel="stylesheet" href="css/register.css">
     <h1>Register</h1>
-<form  class="form1" method="post" action="">
+<form  class="form1" method="post" action="../../actions/user-interaction.php">
     <label for="pseudo" class="pseudo">Pseudo</label><br>
         <div class="centerer">
             <input class="pseudo" type="text" id="pseudo" name="pseudo" maxlength="20" placeholder="votre pseudo" pattern="[a-zA-Z0-9-.]{1,20}" title="caractères acceptés : a-zA-Z0-9-." required="required"><br><br>
@@ -22,18 +22,9 @@ ob_start();
     </div>
 </form>
     <div class="subbtn">
-        <input id="btn" type="submit" value= "SUBMIT" onclick=<?php header(index.php); ?>>
+        <a href="index.php"><input id="btn" type="submit" value= "SUBMIT"></a>
     </div>
-
 <?php
-$mdp = $_POST['mdp'];
-$mdpconfirm = $_POST['mdpconfirm'];
-
-if($mdp == $mdpconfirm) {
-    header(index . php);
-} else {
-    header(register . php);
-}
 // On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
 $pageContent = ob_get_clean();
 ?>
