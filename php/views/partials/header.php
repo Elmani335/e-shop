@@ -9,6 +9,7 @@
 </head>
 <h1>E SHOP - SLAV LIMITED LTD</h1>
 <link rel="stylesheet" href="css/navbar.css">
+<div class="container">
 <div class="navbar"
     <div class="row">
         <div class="col-md-12">
@@ -21,5 +22,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </html>
