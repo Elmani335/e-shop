@@ -27,7 +27,21 @@ USE `eshop`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table ``
+-- Structure de la table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+    `id_user` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `pseudo_user` VARCHAR(20) NOT NULL,
+    `password_user` VARCHAR(255) NOT NULL,
+    `firstname` VARCHAR(20) NOT NULL,
+    `lastname` VARCHAR(20) NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `order`
 --
 
 CREATE TABLE IF NOT EXISTS `order` (
@@ -47,20 +61,6 @@ CREATE TABLE IF NOT EXISTS `command_details` (
     `id_product` int(3) NOT NULL,
     `order_quantity` int(3) NOT NULL,
     `order_price` float NOT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-    `id_user` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `pseudo_user` VARCHAR(20) NOT NULL,
-    `password_user` VARCHAR(255) NOT NULL,
-    `firstname` VARCHAR(20) NOT NULL,
-    `lastname` VARCHAR(20) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
