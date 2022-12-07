@@ -1,0 +1,16 @@
+
+/* css for products page */
+ body {
+    font-family: Bahnschrift;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
