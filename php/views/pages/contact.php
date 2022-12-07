@@ -1,17 +1,14 @@
 <?php
-$pageTitle = "Contact - Mon site.com";
+$pageTitle = "Contact - SLAV LIMITED.LTD";
 
 $error_message = get_error();
 
 ob_start();
 ?>
+
 <h1>Contact Page</h1>
 
-<?php if ($error_message) { ?>
-<p class="error"><?= $error_message ?></p>
-<?php } ?>
-
-
+<link rel="stylesheet" href="css/contact.css">
 <form action="actions/send_contact.php" method="post">
     Full Name: <input type="text" name="fullname" /><br>
     Email: <input type="email" name="email" /><br>

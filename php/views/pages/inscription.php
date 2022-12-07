@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "register - Mon site.com";
+$pageTitle = "Register - SLAV LIMITED.LTD";
 
 $error_message = get_error();
 
@@ -44,7 +44,7 @@ ob_start();
     </div>
     <label for="adresse" class="adresse">Adresse</label><br>
     <div class="centerer">
-    <textarea class="adresse" id="adresse" name="adresse" placeholder="votre adresse" pattern="[a-zA-Z0-9-.]{5,15}" title="caractères acceptés :  a-zA-Z0-9-_."></textarea><br>
+    <input class="adresse" id="adresse" name="adresse" placeholder="votre adresse" pattern="[a-zA-Z0-9-.]{5,15}" title="caractères acceptés :  a-zA-Z0-9-_."><br>
     </div>
     <div class="subbtn">
     <input id="btn" type="submit" name="inscription" value="S'inscrire">

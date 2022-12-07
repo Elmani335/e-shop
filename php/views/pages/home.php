@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "SLAV E-SHOP";
+$pageTitle = "SLAV LIMITED.LTD";
 
 // Commencer a ecrire dans la memoire tampon
 ob_start();

@@ -14,4 +14,3 @@ require_once __DIR__ . '/utils/errors.php';
 
 // inclure toutes les classes
 
-require_once __DIR__ . './classes/User.php';

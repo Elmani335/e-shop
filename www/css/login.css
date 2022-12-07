@@ -1,50 +1,60 @@
 /* css for login page */
 
-body {
-    background-color: #f5f5f5;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-image: url(../images/login-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.login-box {
-    width: 360px;
-    margin: 7% auto;
-}
-
-.login-logo {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 35px;
-    font-weight: 300;
-}
-
-.login-logo a {
-    color: #444;
-}
-
-.login-box-body {
-    background: #fff;
+.form1 {
+    border: 2px solid #ffffff;
     padding: 20px;
-    border-top: 0;
-    color: #666;
+    margin: 5px;
+    background-image: linear-gradient(to bottom, #051a59, #000000);
+    border-radius: 25px;
 }
 
-.login-box-body .form-control-feedback {
-    color: #777;
-}
 
-.login-box-msg {
-    margin: 0;
+.mdp {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Bahnschrift;
     text-align: center;
-    padding: 0 20px 20px 20px;
+    border-radius: 25px;
 }
 
-.social-auth-links {
-    margin: 10px 0;
+
+.email {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Bahnschrift;
+    text-align: center;
+    border-radius: 25px;
 }
 
+
+.centerer,input {
+    font-family: Bahnschrift;
+    font-size: 20px;
+    color: #ffffff;
+
+}
+.centerer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+
+.subbtn {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.subbtn #btn {
+    font-family: Bahnschrift;
+    font-size: 20px;
+    border-radius: 25px;
+    color: black;
+    transition-delay: 50ms;
+    transition-duration: 500ms;
+}
