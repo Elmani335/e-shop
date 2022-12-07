@@ -54,7 +54,7 @@
 
 
 
-// function register with information given in the inscription.php form
+// function register with information given in the register.php form
 
 function register($pseudo, $motDePasse){
     // get the database connection

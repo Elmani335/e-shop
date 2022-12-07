@@ -30,6 +30,9 @@
     border-radius: 25px;
 }
 
+.pseudo input {
+    color:#000000
+}
 
 .centerer,input {
     font-family: Bahnschrift;
