@@ -22,7 +22,7 @@ ob_start();
     </div>
 </form>
     <div class="subbtn">
-        <input id="btn" type="submit" value= "SUBMIT" onclick="window.">
+        <input id="btn" type="submit" value= "SUBMIT" onclick=<?php header(index.php); ?>>
     </div>
 
 <?php
@@ -34,9 +34,6 @@ if($mdp == $mdpconfirm) {
 } else {
     header(register . php);
 }
-
-
-
 // On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
 $pageContent = ob_get_clean();
 ?>
