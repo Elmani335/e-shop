@@ -17,11 +17,20 @@ ob_start();
         <input class="mdp" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required="required"><br><br>
     </div>
     <div class="centerer">
-        <input class="mdp" type="password" id="mdp" name="mdp" placeholder="Confirmation du mot de passe" required="required"><br><br>
+        <input class="mdp" type="password" id="mdp_confirm" name="mdp" placeholder="Confirmation du mot de passe" required="required"><br><br>
     </div>
 </form>
 
 <?php
+$mdp = $_POST['mdp'];
+$mdp_confirm = $_POST['mdp_confirm'];
+
+if ($mdp == $mdp_confirm) {
+    header(index.php);
+} else {
+    header(register.php);
+}
+
 // On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
 $pageContent = ob_get_clean();
 ?>
