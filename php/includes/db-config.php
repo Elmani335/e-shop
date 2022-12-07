@@ -3,7 +3,7 @@
  'hostname' => '82.64.34.8',
  'user' => 'eshop',
  'password' => 'Eshop.git',
- #'nameBDD' => 'eshop',
+ 'nameBDD' => 'eshop',
      ];
 
 $hostname = $conf['hostname'];
