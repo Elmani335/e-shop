@@ -20,14 +20,15 @@ ob_start();
                 <div class="centerer">
                     <input type="password" name="motDePasse" id="motDePasse" required>
                 </div>
-            <div class="subbtn">
-                <input id="btn" type="submit" value= "<?php
-                $pseudo = $_POST['pseudo'];
-                $motDePasse = $_POST['motDePasse'];
-                login($pseudo, $motDePasse);
-                ?>">
-            </div>
         </form>
+        <div class="subbtn">
+            <input id="btn" type="submit" value= "<?php
+            require_once __DIR__ . '/../../actions/user-interaction.php';
+            $pseudo = $_POST['pseudo'];
+            $motDePasse = $_POST['motDePasse'];
+            login($pseudo, $motDePasse);
+            ?>">
+        </div>
 
 
 <?php $pageContent = ob_get_clean(); ?>
