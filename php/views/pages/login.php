@@ -8,11 +8,6 @@ $error_message = get_error();
 ob_start();
 ?>
 
-<form method="post">
-    <input type="submit" name="button1"
-           class="button" value="login" />
-</form>
-
 
 <link rel="stylesheet" href="css/login.css">
     <h1>Login</h1>

@@ -15,7 +15,7 @@
           $pseudo = $_POST['pseudo'];
           $mdp = $_POST['password'];
 
-          $recuperationUtilisateur = $db->prepare('SELECT `password`, `id_user` FROM user');
+          $recuperationUtilisateur = $db->prepare('SELECT `password`, `id_user` FROM user WHERE pseudo = :pseudo');
           $recuperationUtilisateur->execute([
               'password' => $mdp
           ]);
@@ -59,7 +59,7 @@ function register($pseudo, $motDePasse){
     // get the database connection
     global $connection;
     // query to insert the user
-    $query = "INSERT INTO users (pseudo, password) VALUES (:pseudo, :mdp)";
+    $query = "INSERT INTO user (pseudo, password) VALUES (:pseudo, :mdp)";
     // prepare the query
     $statement = $connection->prepare($query);
     // bind the parameters
