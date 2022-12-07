@@ -25,9 +25,10 @@
     font-family: Bahnschrift;
     text-align: center;
     border-radius: 25px;
+
 }
 
-.nom {
+.mdpconfirm {
     display: flex;
     justify-content: center;
     color: #ffffff;
@@ -35,26 +36,7 @@
     font-family: Bahnschrift;
     text-align: center;
     border-radius: 25px;
-}
-
-.prenom {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Bahnschrift;
-    text-align: center;
-    border-radius: 25px;
-}
-
-.email {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Bahnschrift;
-    text-align: center;
-    border-radius: 25px;
+    width: 30%;
 }
 
 .centerer,input {
@@ -64,47 +46,6 @@
 
 }
 
-
-.civilite {
-
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Bahnschrift;
-    text-align: center;
-    border-radius: 25px;
-}
-
-.ville {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Bahnschrift;
-    text-align: center;
-    border-radius: 25px;
-}
-
-.cp {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Bahnschrift;
-    text-align: center;
-    border-radius: 25px;
-}
-
-.adresse {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Bahnschrift;
-    text-align: center;
-    border-radius: 25px;
-}
 
 .centerer {
     display: flex;
@@ -123,18 +64,22 @@
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+
 }
 
 .subbtn #btn {
     font-family: Bahnschrift;
+    border: 2px solid #ffffff;
     font-size: 20px;
     border-radius: 25px;
+    background-color: white;
     color: black;
     transition-delay: 50ms;
     transition-duration: 500ms;
 }
 
 .subbtn #btn:hover {
+    border: 2px solid #50ff0d;
     background-color: #000000;
     color: #ffffff;
     transition-delay: 50ms;

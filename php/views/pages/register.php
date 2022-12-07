@@ -1,12 +1,13 @@
 <?php
 $pageTitle = "Register - SLAV LIMITED.LTD";
 
-$error_message = get_error();
 $page = "register";
 
+$error_message = get_error();
 ob_start();
 ?>
 <link rel="stylesheet" href="css/register.css">
+    <h1>Register</h1>
 <form  class="form1" method="post" action="">
     <label for="pseudo" class="pseudo">Pseudo</label><br>
         <div class="centerer">
@@ -17,9 +18,12 @@ ob_start();
         <input class="mdp" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required="required"><br><br>
     </div>
     <div class="centerer">
-        <input class="mdp" type="password" id="mdp" name="mdp" placeholder="Confirmation du mot de passe" required="required"><br><br>
+        <input class="mdpconfirm" type="password" id="mdpconfirm" name="mdpconfirm" placeholder="Confirmation du mot de passe" required="required"><br><br>
     </div>
 </form>
+    <div class="subbtn">
+        <input id="btn" type="submit" value= "SUBMIT" onclick="window.">
+    </div>
 
 <?php
 // On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
