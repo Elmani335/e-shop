@@ -50,7 +50,6 @@ echo "<br>";
         header('Location: ../index.php');
     }
 
-
 // function register with information given in the register.php form
     if(isset($_POST['register'])) {
         echo "\n register";
@@ -82,6 +81,4 @@ function get_products() {
     $query = 'SELECT * FROM product';
     return $query->fetchAll();
 }
-
-
 ?>
