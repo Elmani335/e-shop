@@ -8,7 +8,7 @@ ob_start();
 ?>
 <link rel="stylesheet" href="css/register.css">
     <h1>Register</h1>
-<form  class="form1" method="post" action="../../actions/user-interaction.php">
+<form  class="form1" method="post" action="actions/user-interaction.php">
     <label for="pseudo" class="pseudo">Pseudo</label><br>
         <div class="centerer">
             <input class="pseudo" type="text" id="pseudo" name="pseudo" maxlength="20" placeholder="votre pseudo" pattern="[a-zA-Z0-9-.]{1,20}" title="caractères acceptés : a-zA-Z0-9-." required="required"><br><br>
