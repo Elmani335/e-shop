@@ -24,14 +24,17 @@ echo "<br>";
         if($user) {
             if(password_verify($motDePasse, $user['motDePasse'])) {
                 $_SESSION['pseudo_user'] = $user;
-                header('Location: ../index.php');
+
+
             } else {
                 set_error('Mot de passe incorrect');
-                header('Location: ../index.php');
+                // set the error message to display on the login page
+                
+
             }
         } else {
             set_error('Utilisateur inconnu');
-            header('Location: ../index.php');
+
         }
     }
 
