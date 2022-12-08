@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../php/init.php';
 echo "redirected to user-interaction.php";
 echo "<br>";
 
+
     if(isset($_POST['login'])) {
         echo "\n login";
         echo "<br>";
@@ -46,7 +47,6 @@ echo "<br>";
         header('Location: ../index.php');
     }
 
-
 // function register with information given in the register.php form
     if(isset($_POST['register'])) {
         echo "\n register";
@@ -78,6 +78,4 @@ function get_products() {
     $query = 'SELECT * FROM product';
     return $query->fetchAll();
 }
-
-
 ?>
