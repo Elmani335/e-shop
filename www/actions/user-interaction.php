@@ -2,15 +2,16 @@
 require_once __DIR__ . '/../../php/init.php';
 #require_once('../includes/db-config.php');
 echo "redirected to user-interaction.php";
+echo "<br>";
 
 // if(isset($_POST['register'])){
 
     if(isset($_POST['login'])) {
         echo "\n login";
+        echo "<br>";
         $pseudo = $_POST['pseudo'];
-        require_once('./init.php');
-        require_once('./database.inc.php');
-
+        require_once('php/init.php');
+        require_once('php/database.inc.php');
 
         require_once('./database.inc.php');
         if (isset($_POST['pseudo']) && isset($_POST['password'])) {
@@ -56,26 +57,23 @@ echo "redirected to user-interaction.php";
 // function register with information given in the register.php form
     if(isset($_POST['register'])) {
         echo "\n register";
+        echo "<br>";
         $pseudo = $_POST['pseudo'];
-        $motDePasse = $_POST['motDePasse'];
+        echo "\n pseudo : " . $pseudo;
+        echo "<br>";
+        // send the information to the database securely
+        $motDePasse = password_hash($password, PASSWORD_DEFAULT);
+        echo "\n Mot de passe : " . $motDePasse;
         // get the database connection
         global $connection;
         // query to insert the user
         $query = "INSERT INTO user (pseudo, password) VALUES (:pseudo, :mdp)";
-        // prepare the query
-        $statement = $connection->prepare($query);
-        // bind the parameters
-        $statement->bindParam(':pseudo', $pseudo);
-        $statement->bindParam(':motDePasse', $motDePasse);
-        // execute the query
-        $statement->execute();
-        // return true
-        return true;
+
     }
 
 function get_products() {
     global $db;
-    $query = $db->prepare('SELECT * FROM products');
+    $query = 'SELECT * FROM product';
     return $query->fetchAll();
 }
 
