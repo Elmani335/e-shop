@@ -11,7 +11,7 @@ ob_start();
 
 <link rel="stylesheet" href="css/login.css">
     <h1>Login</h1>
-        <form class="form1" action="../../../www/actions/user-interaction.php" method="post">
+        <form class="form1" action="actions/user-interaction.php" method="post">
             <label for="pseudo" class="pseudo">Pseudo</label><br>
                 <div class="centerer">
                     <input class="pseudo" type="text" id="pseudo" name="pseudo" maxlength="20" placeholder="votre pseudo" pattern="[a-zA-Z0-9-.]{1,20}" title="caractères acceptés : a-zA-Z0-9-." required="required"><br><br>
@@ -20,10 +20,11 @@ ob_start();
                 <div class="centerer">
                     <input class="mdp" type="password" name="motDePasse" id="motDePasse" required>
                 </div>
+            <div class="subbtn">
+                <input name="login" id="btn" type="submit" value="login">
+            </div>
         </form>
-        <div class="subbtn">
-            <input id="btn" type="submit" value= "SUBMIT" onclick= <?php  header(index.php);?>>
-        </div>
+
 <?php $pageContent = ob_get_clean(); ?>
 
 

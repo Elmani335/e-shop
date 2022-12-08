@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../../php/init.php';
 #require_once('../includes/db-config.php');
 
   function login(){
