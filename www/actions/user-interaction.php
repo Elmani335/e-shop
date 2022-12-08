@@ -29,7 +29,7 @@ echo "<br>";
             } else {
                 set_error('Mot de passe incorrect');
                 // set the error message to display on the login page
-                
+
 
             }
         } else {
