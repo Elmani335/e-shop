@@ -6,6 +6,7 @@ $page = "register";
 $error_message = get_error();
 ob_start();
 ?>
+
 <link rel="stylesheet" href="css/register.css">
     <h1>Register</h1>
 <form  class="form1" method="post" action="actions/user-interaction.php">
