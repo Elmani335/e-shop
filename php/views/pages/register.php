@@ -20,10 +20,10 @@ ob_start();
     <div class="centerer">
         <input class="mdpconfirm" type="password" id="mdpconfirm" name="mdpconfirm" placeholder="Confirmation du mot de passe" required="required"><br><br>
     </div>
-</form>
     <div class="subbtn">
         <a href="index.php"><input id="btn" type="submit" value= "SUBMIT"></a>
     </div>
+</form>
 <?php
 // On arrete d'ecrire dans la memoire tampon et on recupere le contenu precedent
 $pageContent = ob_get_clean();
