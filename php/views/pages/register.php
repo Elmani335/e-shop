@@ -22,7 +22,7 @@ ob_start();
         <input class="mdpconfirm" type="password" id="mdpconfirm" name="mdpconfirm" placeholder="Confirmation du mot de passe" required="required"><br><br>
     </div>
     <div class="subbtn">
-        <a href="index.php"><input id="btn" type="submit" value= "SUBMIT"></a>
+        <a href="index.php"><input id="btn" type="submit" value= "register"></a>
     </div>
 </form>
 <?php

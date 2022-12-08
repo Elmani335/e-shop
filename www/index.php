@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__ . './actions/user-interaction.php';
+require_once __DIR__ . '/actions/user-interaction.php';
 require_once __DIR__ . '/../php/init.php';
 
 // ROUTER
 $page = "home";
 
 if (isset($_GET['page'])) {
-    if (in_array($_GET['page'], $router_pages)) {
+    if (in_array($_GET['page'], $router_page)) {
         $page = $_GET['page'];
     }
     else {

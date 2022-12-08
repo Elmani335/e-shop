@@ -1,7 +1,7 @@
 <?php
+//require_once('./init.php');
 
-#require_once('../includes/db-config.php');
-
+/*
   function login(){
       require_once('./init.php');
       require_once('./database.inc.php');
@@ -40,7 +40,9 @@
       header('Location: ../Login.php?msg=L\'email ou le mot de passe est invalide');
       die();
   }
+*/
 
+/*
   function logout(){
       session_start();
       if (isset($_SESSION['user'])) {
@@ -48,7 +50,7 @@
       }
       header('Location: ../index.php');
   }
-
+*/
 
 // function register with information given in the register.php form
 
@@ -56,7 +58,7 @@ function register($pseudo, $motDePasse){
     // get the database connection
     global $connection;
     // query to insert the user
-    $query = "INSERT INTO user (pseudo, password) VALUES (:pseudo, :mdp)";
+    $query = "INSERT INTO user (pseudo_user, password_user) VALUES (:pseudo, :motDePasse)";
     // prepare the query
     $statement = $connection->prepare($query);
     // bind the parameters
@@ -74,5 +76,9 @@ function get_products() {
     return $query->fetchAll();
 }
 
-
-?>
+if (isset($_POST["register"])){
+    register($_POST["pseudo"], $_POST["mdp"]);
+    header(__DIR__ . "index.php");
+}elseif (isset($_POST["login"])){
+    login();
+}

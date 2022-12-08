@@ -7,7 +7,7 @@ session_start();
 require_once __DIR__ . '/database.inc.php';
 
 // CONFIG
-$router_pages = ['home', 'contact', 'products', 'login', 'register', '404'];
+$router_page = ['home', 'contact', 'products', 'login', 'register', '404'];
 
 // inclure les utilitaires
 require_once __DIR__ . '/utils/errors.php';
