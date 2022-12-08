@@ -4,46 +4,40 @@ require_once __DIR__ . '/../../php/init.php';
 echo "redirected to user-interaction.php";
 echo "<br>";
 
-// if(isset($_POST['register'])){
 
     if(isset($_POST['login'])) {
         echo "\n login";
         echo "<br>";
         $pseudo = $_POST['pseudo'];
-        require_once('php/init.php');
-        require_once('php/database.inc.php');
-
-        require_once('./database.inc.php');
-        if (isset($_POST['pseudo']) && isset($_POST['password'])) {
-            $pseudo = $_POST['pseudo'];
-            $password = $_POST['password'];
-
-            $recuperationUtilisateur = $db->prepare('SELECT `password`, `id_user` FROM user WHERE pseudo = $pseudo');
-            $recuperationUtilisateur->execute([
-                'password' => $password,
-                'pseudo' => $pseudo
-            ]);
-            $utilisateurRecupere = $recuperationUtilisateur->fetch();
-            $mdp_valid = ($mdp == $utilisateurRecupere['password']) ? true : false;
-
-            if ($mdp_valid) {
-                $recuperationUtilisateur = $db->prepare('SELECT id_user, pseudo  FROM user WHERE id_user = $userid ');
-                $recuperationUtilisateur->setFetchMode(PDO::FETCH_CLASS, 'User');
-                $recuperationUtilisateur->execute([
-                        'id_user' => $utilisateurRecupere['id_user'],
-                    ]);
-                    $utilisateurRecupere = $recuperationUtilisateur->fetch();
-                    $_SESSION['user'] = $utilisateurRecupere;
-                    var_dump($_SESSION['user']);
-                    $_SESSION['user']->updateLastLogin($db);
-                    header('Location: ../index.php');
-                    die();
-                }
+        echo "\n pseudo: " . $pseudo;
+        echo "<br>";
+        $motDePasse = $_POST['motDePasse'];
+        $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
+        echo "\n motDePasse: " . $motDePasse;
+        echo "<br>";
+        global $db;
+        $sql = "SELECT * FROM user WHERE pseudo_user = :pseudo";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':pseudo', $pseudo);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        if($user) {
+            if(password_verify($motDePasse, $user['motDePasse'])) {
+                $_SESSION['pseudo_user'] = $user;
+                header('Location: ../index.php');
+            } else {
+                set_error('Mot de passe incorrect');
+                header('Location: ../index.php');
             }
-            header('Location: ../Login.php?msg=L\'email ou le mot de passe est invalide');
-            die();
+        } else {
+            set_error('Utilisateur inconnu');
+            header('Location: ../index.php');
         }
+    }
 
+    function set_error($error) {
+        $_SESSION['error'] = $error;
+    }
     function logout()
     {
         session_start();
@@ -62,13 +56,22 @@ echo "<br>";
         echo "\n pseudo : " . $pseudo;
         echo "<br>";
         // send the information to the database securely
-        $motDePasse = password_hash($password, PASSWORD_DEFAULT);
+        $motDePasse = $_POST['mdp'];
+        $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
         echo "\n Mot de passe : " . $motDePasse;
         // get the database connection
-        global $connection;
-        // query to insert the user
-        $query = "INSERT INTO user (pseudo, password) VALUES (:pseudo, :mdp)";
-
+        include_once('../includes/db-config.php');
+        include_once '../php/database.inc.php';
+        global $db;
+        // prepare the query
+        $query = $db->prepare("INSERT INTO user (pseudo_user, password_user) VALUES (:pseudo, :motDePasse)");
+        // execute the query
+        $query->execute([
+            'pseudo' => $pseudo,
+            'motDePasse' => $motDePasse
+        ]);
+        // redirect to the login page
+        header('Location: ../index.php');
     }
 
 function get_products() {
