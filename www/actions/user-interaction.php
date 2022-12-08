@@ -3,14 +3,14 @@ require_once __DIR__ . '/../../php/init.php';
 #require_once('../includes/db-config.php');
 
   function login(){
-      require_once('../init.php');
-      require_once('../database.inc.php');
+      require_once('./init.php');
+      require_once('./database.inc.php');
 
       #spl_autoload_register(function($class){
       #    require_once('../classes/'.$class.'.php');
       #});
 
-      require_once('../database.inc.php');
+      require_once('./database.inc.php');
       if (isset($_POST['pseudo']) && isset($_POST['password'])) {
           $pseudo = $_POST['pseudo'];
           $password = $_POST['password'];
