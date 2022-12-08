@@ -4,7 +4,6 @@ require_once __DIR__ . '/../../php/init.php';
 echo "redirected to user-interaction.php";
 echo "<br>";
 
-
     if(isset($_POST['login'])) {
         echo "\n login";
         echo "<br>";
