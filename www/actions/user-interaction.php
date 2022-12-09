@@ -2,10 +2,37 @@
 require_once __DIR__ . '/../../php/init.php';
 #require_once('../includes/db-config.php');
 
-function admin_add_product($product, $productName, $productCateg, $productDesc, $productPrice, $productStock){
+function admin_edit_product($productName, $productCateg, $productDesc, $productPrice, $productStock){
     global $IsUserConnected;
-    if ($IsUserConnected && user_role == admin){
+    global $user_admin;
+    if ($IsUserConnected && $user_admin == 'admin' && isset($_POST['add_button'])){
+        global $db;
+        $query = $db->prepare('UPDATE product SET (name_product, categ_product, description_product, price_product, stock_product) WHERE (:product = $productName)');
+        $query -> bindParam(':name_product', $productName);
+        $query -> bindParam(':categ_product', $productCateg);
+        $query -> bindParam(':description_product', $productDesc);
+        $query -> bindParam(':price_product', $productPrice);
+        $query -> bindParam(':stock_product', $productStock);
+        $query -> execute();
+    }else{
+        echo 'user is not administrator or not connected';
+    }
+}
 
+function admin_add_product($productName, $productCateg, $productDesc, $productPrice, $productStock){
+    global $IsUserConnected;
+    global $user_admin;
+    if ($IsUserConnected && $user_admin == 'admin'){
+        global $db;
+        $query = $db->prepare('INSERT INTO product SET (name_product, categ_product, description_product, price_product, stock_product))');
+        $query -> bindParam(':name_product', $productName);
+        $query -> bindParam(':categ_product', $productCateg);
+        $query -> bindParam(':description_product', $productDesc);
+        $query -> bindParam(':price_product', $productPrice);
+        $query -> bindParam(':stock_product', $productStock);
+        $query -> execute();
+    }else{
+        echo 'user is not administrator or not connected';
     }
 }
 
@@ -61,6 +88,15 @@ if (isset($_POST['login'])) {
         }
 }
 
+//vérification si l'user actuel est un admin
+
+if ($_SESSION['admin']){
+    global $user_admin;
+    $user_admin = 'admin';
+}
+
+
+
 // register user, hash password, insert into db, redirect to login page, make sure to check if user already exists, if so, redirect to register page with error message, check is both password fields match, if not, redirect to register page with error message
 
 if (isset($_POST['register'])) {
@@ -78,12 +114,6 @@ if (isset($_POST['register'])) {
                 header('Location: ../index.php');
             } else {
                 echo "Password does not match!!";
-                /*
-                echo "<br>";
-                echo $motDePasse;
-                echo "<br>";
-                echo $motDePasseConfirm;
-                */
             }
 }
 
