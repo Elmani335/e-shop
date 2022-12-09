@@ -9,20 +9,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <title><?= $pageTitle; ?></title>
 </head>
 <h1><?php
 echo "E SHOP - SLAV LIMITED LTD";
 // show if the user is logged in or not
-if (isset($_SESSION['pseudo'])) {
-    echo " - " . $_SESSION['pseudo'];
+if (isset($_SESSION['user'])) {
+    echo " - " . $_SESSION['user']['pseudo_user'];
 
 } else {
     echo " - Not logged in";
 }
     ?>
 </h1>
-<link rel="stylesheet" href="css/navbar.css">
+
 <div class="container">
 <div class="navbar"
     <div class="row">
@@ -33,11 +34,11 @@ if (isset($_SESSION['pseudo'])) {
                 <a href="index.php?page=contact">Contact</a>
                 <a href="index.php?page=login">Login</a>
                 <a href="index.php?page=register">Register</a>
-                <a href=<?php if ($IsUserConnected = true) {
-                    echo "index.php";
+                <a href=<?php if ($IsUserConnected == true) {
+                    echo "logout.php";
                 }
                 else {
-                    echo "index.php?page=products";
+                    echo "index.php?page=login";
                 } ?>>
                 </a>
             </div>
