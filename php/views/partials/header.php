@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,10 @@
     <link rel="stylesheet" href="css/main.css">
     <title><?= $pageTitle; ?></title>
 </head>
-<h1>E SHOP - SLAV LIMITED LTD</h1>
+<h1><?php
+echo "E SHOP - SLAV LIMITED LTD";
+echo ($IsUserConnected) ; ?>
+</h1>
 <link rel="stylesheet" href="css/navbar.css">
 <div class="container">
 <div class="navbar"
@@ -19,6 +26,13 @@
                 <a href="index.php?page=contact">Contact</a>
                 <a href="index.php?page=login">Login</a>
                 <a href="index.php?page=register">Register</a>
+                <a href=<?php if ($IsUserConnected = true) {
+                    echo "index.php";
+                }
+                else {
+                    echo "index.php?page=products";
+                } ?>>
+                </a>
             </div>
         </div>
     </div>

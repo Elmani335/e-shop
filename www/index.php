@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . './actions/user-interaction.php';
+require_once __DIR__ . '/actions/user-interaction.php';
 require_once __DIR__ . '/../php/init.php';
 
 // ROUTER

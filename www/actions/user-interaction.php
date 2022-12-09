@@ -24,16 +24,20 @@ echo "<br>";
         if($user) {
             if(password_verify($motDePasse, $user['motDePasse'])) {
                 $_SESSION['pseudo_user'] = $user;
+                $IsUserConnected = true;
+                global $IsUserConnected;
 
 
             } else {
                 set_error('Mot de passe incorrect');
                 // set the error message to display on the login page
+                $IsUserConnected = false;
 
 
             }
         } else {
             set_error('Utilisateur inconnu');
+            $IsUserConnected = false;
 
         }
     }
