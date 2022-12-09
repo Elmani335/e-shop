@@ -6,7 +6,6 @@ function admin_add_product($product, $productName, $productCateg, $productDesc, 
     global $IsUserConnected;
     if ($IsUserConnected && user_role == admin){
 
-
     }
 }
 
@@ -79,10 +78,12 @@ if (isset($_POST['register'])) {
                 header('Location: ../index.php');
             } else {
                 echo "Password does not match!!";
+                /*
                 echo "<br>";
                 echo $motDePasse;
                 echo "<br>";
                 echo $motDePasseConfirm;
+                */
             }
 }
 
