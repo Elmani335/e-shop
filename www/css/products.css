@@ -1,2 +1,10 @@
 
-
+/* css for the products page */
+body {
+    font-family: Bahnschrift;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
