@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="572d8907-d88d-4e11-a5b2-528e047b953d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/www/actions/user-interaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/actions/user-interaction.php" afterDir="false" />
-    </list>
+    <list default="true" id="572d8907-d88d-4e11-a5b2-528e047b953d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
