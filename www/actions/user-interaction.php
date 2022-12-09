@@ -67,9 +67,9 @@ if (isset($_POST['register'])) {
     $motDePasse = $_POST['mdp'];
     $motDePasseConfirm = $_POST['mdp2'];
             if ($motDePasse == $motDePasseConfirm) {
-                $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
+                $motDePasseH = password_hash($motDePasse, PASSWORD_DEFAULT);
                 global $db;
-                $insert = "INSERT INTO user (pseudo_user, password_user,) VALUES (:pseudo, :password)";
+                $insert = "INSERT INTO user (pseudo_user, password_user) VALUES (:pseudo, :password)";
                 $stmt = $db->prepare($insert);
                 $stmt->bindParam(':pseudo', $pseudo);
                 $stmt->bindParam(':password', $motDePasse);
