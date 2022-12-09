@@ -72,7 +72,7 @@ if (isset($_POST['register'])) {
                 $insert = "INSERT INTO user (pseudo_user, password_user) VALUES (:pseudo, :password)";
                 $stmt = $db->prepare($insert);
                 $stmt->bindParam(':pseudo', $pseudo);
-                $stmt->bindParam(':password', $motDePasse);
+                $stmt->bindParam(':password', $motDePasseH);
                 $stmt->execute();
                 header('Location: ../index.php');
             } else {
