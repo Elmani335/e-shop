@@ -4,7 +4,8 @@ require_once __DIR__ . '/../../php/init.php';
 
 function admin_add_product($product, $productName, $productCateg, $productDesc, $productPrice, $productStock){
     global $IsUserConnected;
-    if ($IsUserConnected && ){
+    if ($IsUserConnected && user_role == admin){
+
 
     }
 }
@@ -48,22 +49,16 @@ if (isset($_POST['login'])) {
                 $IsUserConnected = true;
                 global $IsUserConnected;
                 header('Location: ../index.php');
-
-
             } else {
                 set_error('Mot de passe incorrect');
                 // set the error message to display on the login page
                 $IsUserConnected = false;
                 header('Location: ../index.php');
-
-
-
             }
         } else {
             set_error('Utilisateur inconnu');
             $IsUserConnected = false;
             header('Location: ../index.php');
-
         }
 }
 
