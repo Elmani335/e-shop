@@ -20,7 +20,7 @@ ob_start();
 function get_products()
 {
     global $db;
-    $query = 'SELECT * FROM product INNER JOIN join_categorie.id_categorie on product.nom_categorie';
+    $query = 'SELECT * FROM product INNER JOIN join_categorie.id_categorie on product.categ_product';
     $statement = $db->prepare($query);
     $statement->execute();
     $products = $statement->fetchAll();
