@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../../php/init.php';
-#require_once('../includes/db-config.php');
 
 function admin_edit_product($productName, $productCateg, $productDesc, $productPrice, $productStock){
     global $IsUserConnected;
@@ -116,3 +115,5 @@ if (isset($_POST['register'])) {
             }
 }
 
+admin_edit_product();
+admin_add_product();
