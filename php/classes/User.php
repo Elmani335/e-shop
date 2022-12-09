@@ -14,8 +14,4 @@ class User {
         return $this->pseudo_user;
     }
 
-    /*public function __sleep(){
-        return array($id_user,$email_user,$username_user,$created_date_user,$last_login_date_user,$id_game_playing);
-    }*/
 }
-?>

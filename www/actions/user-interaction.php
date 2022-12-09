@@ -80,9 +80,17 @@ echo "<br>";
         header('Location: ../index.php');
     }
 
-function get_products() {
+    function get_products() {
     global $db;
     $query = 'SELECT * FROM product';
     return $query->fetchAll();
 }
-?>
+
+    function edit_product($product){
+        global $user;
+        global $class;
+        global $db;
+        if ($user != $class){
+            $db->prepare("INSERT INTO product ()" );
+        }
+    }

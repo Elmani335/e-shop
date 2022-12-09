@@ -71,10 +71,9 @@ CREATE TABLE IF NOT EXISTS `command_details` (
 
 CREATE TABLE IF NOT EXISTS `product` (
     `id_product` int(11) PRIMARY KEY AUTO_INCREMENT,
-    `categ_product` int(3) NOT NULL,
     `name_product` VARCHAR(40) NOT NULL,
+    `categ_product` int(3) NOT NULL,
     `description_product` text NOT NULL,
-    `image_product` text NOT NULL,
     `price_product` int(8) NOT NULL,
     `stock_product` int(4) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
