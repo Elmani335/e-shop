@@ -13,6 +13,7 @@
 </head>
 <h1><?php
 echo "E SHOP - SLAV LIMITED LTD";
+global $IsUserConnected;
 echo ($IsUserConnected) ; ?>
 </h1>
 <link rel="stylesheet" href="css/navbar.css">
