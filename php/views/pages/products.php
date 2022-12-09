@@ -8,16 +8,14 @@ $error_message = get_error();
 ob_start();
 
 ?>
+    <link rel="stylesheet" href="css/products.css">
 
-<link rel="stylesheet" href="css/products.css">
-
+    <div>
+        <h1>Products</h1>
+    </div>
 <div class="container">
 
     <div class="row">
-        <h1>Products</h1>
-    </div>
-    <div class="row2">
-
         <?php
 function get_products()
 {
@@ -30,10 +28,20 @@ function get_products()
     return $products;
 }
 $products = get_products();
-foreach ($products as $product) :
+foreach ($products as $product) {
     // show the products in a table
-    echo $product['name_product'] . " - " . $product['price_product'] . "€" . " - " . $product['description_product'] . "<br>";
-
+    echo "<div class='col-md-4'>";
+    echo "<div class='card'>";
+    echo "<img src='images/" . $product['image_product'] . "' alt='Avatar' style='width:100%'>";
+    echo "<div class='container'>";
+    echo "<h4><b>" . $product['name_product'] . "</b></h4>";
+    echo "<p>" . $product['description_product'] . "</p>";
+    echo "<p>" . $product['price_product'] . "€</p>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+    
+}
 ?>
 
-        <?php $pageContent = ob_get_clean() ?>
+<?php $pageContent = ob_get_clean() ?>
