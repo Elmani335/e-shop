@@ -20,3 +20,11 @@ require_once __DIR__ . '/utils/errors.php';
 // definir la fonction get_products
 
 
+// definir  la fonction get user connet
+
+if (isset($_SESSION['user'])) {
+    $IsUserConnected = true;
+} else {
+    $IsUserConnected = false;
+}
+

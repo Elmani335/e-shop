@@ -60,7 +60,7 @@ if (isset($_POST['login'])) {
     echo "\n pseudo: " . $pseudo;
     echo "<br>";
     $motDePasse = $_POST['motDePasse'];
-    $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
+
     echo "\n motDePasse: " . $motDePasse;
     echo "<br>";
     global $db;
@@ -71,9 +71,8 @@ if (isset($_POST['login'])) {
         $user = $stmt->fetch();
         if($user) {
             if (password_verify($motDePasse, $user['password_user'])) {
-                $_SESSION['pseudo_user'] = $user;
-                $IsUserConnected = true;
-                global $IsUserConnected;
+                $_SESSION['user'] = $user;
+
                 header('Location: ../index.php');
             } else {
                 set_error('Mot de passe incorrect');
