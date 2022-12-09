@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../php/init.php';
 function admin_edit_product($productName, $productCateg, $productDesc, $productPrice, $productStock){
     global $IsUserConnected;
     global $user_admin;
-    if ($IsUserConnected && $user_admin == 'admin' && isset($_POST['add_button'])){
+    if ($IsUserConnected && $user_admin == 'admin' && isset($_POST['add_product_button'])){
         global $db;
         $query = $db->prepare('UPDATE product SET (name_product, categ_product, description_product, price_product, stock_product) WHERE (:product = $productName)');
         $query -> bindParam(':name_product', $productName);
@@ -22,7 +22,7 @@ function admin_edit_product($productName, $productCateg, $productDesc, $productP
 function admin_add_product($productName, $productCateg, $productDesc, $productPrice, $productStock){
     global $IsUserConnected;
     global $user_admin;
-    if ($IsUserConnected && $user_admin == 'admin'){
+    if ($IsUserConnected && $user_admin == 'admin' && isset($_POST['edit_product_button'])){
         global $db;
         $query = $db->prepare('INSERT INTO product SET (name_product, categ_product, description_product, price_product, stock_product))');
         $query -> bindParam(':name_product', $productName);
