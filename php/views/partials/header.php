@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
     echo " - " . $_SESSION['user']['pseudo_user'];
 
 } else {
-    echo " - Not logged in";
+    echo " - You are disconnected";
 }
     ?>
 </h1>
