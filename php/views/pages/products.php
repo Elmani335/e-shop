@@ -36,16 +36,18 @@ foreach ($products as $product) {
     echo "<p><b>" . $product['name_product'] . "</b></p>";
     echo "<p>" . $product['description_product'] . "</p>";
     echo "<p>" . $product['price_product'] . "€</p>";
+
+    echo '<form class="fmr" action="index.php?page=cart" method="post">';
+    echo '<input type="hidden" name="action" value="add">';
+    echo '<input type="hidden" name="product_id" value="' . $product['id_product'] . '">';
+    echo '<input class="fmr" type="submit" value="Add to Cart">';
+    echo '</form>';
+
+
     echo "</div>";
     echo "</div>";
     echo "</div>";
 
-    // add a button to add the product to the cart
-    echo '<form action="index.php?page=cart" method="post">';
-    echo '<input type="hidden" name="action" value="add">';
-    echo '<input type="hidden" name="product_id" value="' . $product['id_product'] . '">';
-    echo '<input type="submit" value="Add to Cart">';
-    echo '</form>';
 
     // save the product id in a session variable
     $_SESSION['product_id'] = $product['id_product'];

@@ -1,8 +1,8 @@
 <?php 
  $conf = [
- 'hostname' => '82.64.34.8',
- 'user' => 'eshop',
- 'password' => 'Eshop.git',
+ 'hostname' => 'localhost',
+ 'user' => 'root',
+ 'password' => '',
  'nameBDD' => 'eshop',
      ];
 
