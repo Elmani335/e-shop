@@ -32,15 +32,22 @@ foreach ($products as $product) {
     // show the products in a table
     echo "<div class='col-md-4'>";
     echo "<div class='card'>";
-    echo "<img src='images/" . $product['image_product'] . "' alt='Avatar' style='width:100%'>";
     echo "<div class='container'>";
-    echo "<h4><b>" . $product['name_product'] . "</b></h4>";
+    echo "<p><b>" . $product['name_product'] . "</b></p>";
     echo "<p>" . $product['description_product'] . "</p>";
     echo "<p>" . $product['price_product'] . "€</p>";
     echo "</div>";
     echo "</div>";
     echo "</div>";
-    
+
+    // add a button to add the product to the cart
+    echo '<form action="cart.php" method="post">';
+    echo '<input type="hidden" name="action" value="add">';
+    echo '<input type="hidden" name="product_id" value="' . $product['id_product'] . '">';
+    echo '<input type="submit" value="Add to Cart">';
+    echo '</form>';
+
+
 }
 ?>
 

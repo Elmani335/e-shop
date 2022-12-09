@@ -7,7 +7,7 @@ session_start();
 require_once __DIR__ . '/database.inc.php';
 
 // CONFIG
-$router_pages = ['home', 'contact', 'products', 'login', 'register', '404'];
+$router_pages = ['home', 'contact', 'products', 'login', 'register', '404', 'cart' ];
 
 // inclure les actions
 

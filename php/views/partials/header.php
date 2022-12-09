@@ -41,6 +41,7 @@ if (isset($_SESSION['user'])) {
                     echo "index.php?page=login";
                 } ?>>
                 </a>
+                <a href="index.php?page=cart">Cart</a>
             </div>
         </div>
     </div>
