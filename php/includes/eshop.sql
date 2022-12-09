@@ -90,3 +90,13 @@ CREATE TABLE IF NOT EXISTS `join_categorie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+--
+-- Structure de la table `cart`
+--
+
+CREATE TABLE IF NOT EXISTS `cart` (
+`id_product` int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`quantity_product` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
