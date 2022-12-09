@@ -1,50 +1,55 @@
 <?php
 require_once __DIR__ . '/../../php/init.php';
 #require_once('../includes/db-config.php');
-echo "redirected to user-interaction.php";
-echo "<br>";
 
-
-    if(isset($_POST['login'])) {
-        echo "\n login";
-        echo "<br>";
-        $pseudo = $_POST['pseudo'];
-        echo "\n pseudo: " . $pseudo;
-        echo "<br>";
-        $motDePasse = $_POST['motDePasse'];
-        $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
-        echo "\n motDePasse: " . $motDePasse;
-        echo "<br>";
-        global $db;
+if (isset($_POST['login'])) {
+    echo "\n login";
+    echo "<br>";
+    $pseudo = $_POST['pseudo'];
+    echo "\n pseudo: " . $pseudo;
+    echo "<br>";
+    $motDePasse = $_POST['motDePasse'];
+    $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
+    echo "\n motDePasse: " . $motDePasse;
+    echo "<br>";
+    global $db;
         $sql = "SELECT * FROM user WHERE pseudo_user = :pseudo";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':pseudo', $pseudo);
         $stmt->execute();
         $user = $stmt->fetch();
         if($user) {
-            if(password_verify($motDePasse, $user['motDePasse'])) {
+            if (password_verify($motDePasse, $user['password_user'])) {
                 $_SESSION['pseudo_user'] = $user;
                 $IsUserConnected = true;
                 global $IsUserConnected;
+                header('Location: ../index.php');
 
 
             } else {
                 set_error('Mot de passe incorrect');
                 // set the error message to display on the login page
                 $IsUserConnected = false;
+                header('Location: ../index.php');
+
 
 
             }
         } else {
             set_error('Utilisateur inconnu');
             $IsUserConnected = false;
+            header('Location: ../index.php');
 
         }
-    }
+}
 
-    function set_error($error) {
-        $_SESSION['error'] = $error;
-    }
+function set_error($error)
+{
+    $_SESSION['error'] = $error;
+}
+
+global $IsUserConnected;
+if ($IsUserConnected == true && isset($_POST['logout'])) {
     function logout()
     {
         session_start();
@@ -53,36 +58,32 @@ echo "<br>";
         }
         header('Location: ../index.php');
     }
-
-// function register with information given in the register.php form
-    if(isset($_POST['register'])) {
-        echo "\n register";
-        echo "<br>";
-        $pseudo = $_POST['pseudo'];
-        echo "\n pseudo : " . $pseudo;
-        echo "<br>";
-        // send the information to the database securely
-        $motDePasse = $_POST['mdp'];
-        $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
-        echo "\n Mot de passe : " . $motDePasse;
-        // get the database connection
-        include_once('../includes/db-config.php');
-        include_once '../php/database.inc.php';
-        global $db;
-        // prepare the query
-        $query = $db->prepare("INSERT INTO user (pseudo_user, password_user) VALUES (:pseudo, :motDePasse)");
-        // execute the query
-        $query->execute([
-            'pseudo' => $pseudo,
-            'motDePasse' => $motDePasse
-        ]);
-        // redirect to the login page
-        header('Location: ../index.php');
-    }
-
-function get_products() {
-    global $db;
-    $query = 'SELECT * FROM product';
-    return $query->fetchAll();
 }
+
+// register user, hash password, insert into db, redirect to login page, make sure to check if user already exists, if so, redirect to register page with error message, check is both password fields match, if not, redirect to register page with error message
+
+if (isset($_POST['register'])) {
+    $pseudo = $_POST['pseudo'];
+    $motDePasse = $_POST['mdp'];
+    $motDePasseConfirm = $_POST['mdp2'];
+    $motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT);
+    $motDePasseConfirm = password_hash($motDePasseConfirm, PASSWORD_DEFAULT);
+            if ($motDePasse == $motDePasseConfirm) {
+                global $db;
+                $insert = "INSERT INTO user (pseudo_user, password_user,) VALUES (:pseudo, :password)";
+                $stmt = $db->prepare($insert);
+                $stmt->bindParam(':pseudo', $pseudo);
+                $stmt->bindParam(':password', $motDePasse);
+                $stmt->execute();
+                header('Location: ../index.php');
+            } else {
+                echo "Password does not match!!";
+                echo "<br>";
+                echo $motDePasse;
+                echo "<br>";
+                echo $motDePasseConfirm;
+            }
+}
+
+
 ?>
