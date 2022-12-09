@@ -13,8 +13,14 @@
 </head>
 <h1><?php
 echo "E SHOP - SLAV LIMITED LTD";
-global $IsUserConnected;
-echo ($IsUserConnected) ; ?>
+// show if the user is logged in or not
+if (isset($_SESSION['pseudo'])) {
+    echo " - " . $_SESSION['pseudo'];
+
+} else {
+    echo " - Not logged in";
+}
+    ?>
 </h1>
 <link rel="stylesheet" href="css/navbar.css">
 <div class="container">

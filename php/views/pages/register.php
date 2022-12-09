@@ -19,7 +19,7 @@ ob_start();
         <input class="mdp" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required="required"><br><br>
     </div>
     <div class="centerer">
-        <input class="mdpconfirm" type="password" id="mdpconfirm" name="mdpconfirm" placeholder="Confirmation du mot de passe" required="required"><br><br>
+        <input class="mdp" type="password" id="mdp2" name="mdp2" placeholder="Confirmation mdp" required="required"><br><br>
     </div>
     <div class="subbtn">
         <input name="register" id="btn" type="submit" value= "register">

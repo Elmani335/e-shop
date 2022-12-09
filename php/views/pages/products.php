@@ -1,8 +1,9 @@
 <?php
-
 $pageTitle = "Products - SLAV LIMITED.LTD";
-$error_message = get_error();
+
 $page = "products";
+
+$error_message = get_error();
 
 ob_start();
 
@@ -17,20 +18,8 @@ ob_start();
             <h1>Products</h1>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-12">
-            <h2>Our products</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <p>Here is a list of our products</p>
-        </div>
-    </div>
-    <--! get the product_name product_image product_price product_stock from the database and show them -->
-    <div class="row">
+    <div> <?php echo "\n" ?></div>
+    <div class="row2">
         <div class="col-12">
             <table class="table table-striped">
                 <thead>
@@ -43,6 +32,16 @@ ob_start();
                 </thead>
                 <tbody>
                     <?php
+                    function get_products() {
+                        global $db;
+                        $query = 'SELECT * FROM product';
+                        $statement = $db->prepare($query);
+                        $statement->execute();
+                        $products = $statement->fetchAll();
+                        $statement->closeCursor();
+                        return $products;
+                    }
+
                     $products = get_products();
                     foreach ($products as $product) {
                         echo '<tr>';
